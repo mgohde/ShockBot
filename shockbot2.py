@@ -97,7 +97,7 @@ async def on_message(message):
         if len(contentToks):
             cmd=contentToks[0].lower()
             for p in pluginSet:
-                if p.canHandle(cmd, content):
+                if p.canHandle(cmd, message):
                     try:
                         await p.handle(message, channel, content.lstrip(cmd), cmd)
                     except:
